@@ -464,6 +464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _segmentPrefab: {fileID: 8619024534542981613, guid: ef32d3e96ff5a4b489d2e640b9f2569b, type: 3}
+  _NumEatenfood: {fileID: 1083783573}
 --- !u!1 &1047466744
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,6 +869,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gridarea: {fileID: 369795562}
+  _extrafood: {fileID: 1380492548198167820, guid: 87de32944f3dc8a46b815f111e1d2513, type: 3}
+  _eatenFood: 0
 --- !u!1 &1088747444
 GameObject:
   m_ObjectHideFlags: 0

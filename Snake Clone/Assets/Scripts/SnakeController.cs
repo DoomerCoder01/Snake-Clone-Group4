@@ -7,11 +7,12 @@ public class SnakeController : MonoBehaviour
     private Vector2 _direction = Vector2.right;
     private List<Transform> _segments;
     public Transform _segmentPrefab;
-
+    public TestingFood _NumEatenfood;
     private void Start()
     {
         _segments = new List<Transform>();
         _segments.Add(this.transform); 
+        
     }
 
     private void Update()
@@ -66,7 +67,9 @@ public class SnakeController : MonoBehaviour
         _segments.Add(this.transform);
 
         this.transform.position = Vector3.zero;
-        
+
+        //add a reference to food script to reset the amount of food eaten to zero
+        _NumEatenfood._eatenFood = 0; //resets the amount of food eaten
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -77,6 +80,10 @@ public class SnakeController : MonoBehaviour
         else if (other.tag== "Obstacle")
         {
             Resetstate();
+        }
+        else if (other.tag=="extrafood")
+        {
+            Grow(); //suppised to replace this function with one that grows twice the sections on the snake
         }
 
     }
