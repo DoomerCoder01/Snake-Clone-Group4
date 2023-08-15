@@ -8,7 +8,7 @@ public class TestingFood : MonoBehaviour
     public BoxCollider2D _gridarea;
     public  GameObject _extrafood;
     public int _eatenFood; //counts the amount of times the player has eaten the food
-   
+    [SerializeField] private ParticleSystem _foodfeedback;
 
     private void Start()
     {
@@ -25,6 +25,7 @@ public class TestingFood : MonoBehaviour
         float y = Random.Range(bounds.min.y, bounds.max.y);
 
         this.transform.position= new Vector3(Mathf.Round(x),Mathf.Round(y),0); //need to round off vectors so that the food appears in a grid
+
     }
     private void RandomiseExtrafoodPosition()
     {
@@ -48,6 +49,7 @@ public class TestingFood : MonoBehaviour
         {
             RandomisePosition();
             _eatenFood++; //adds a single unit each time player collides with the food
+            _foodfeedback.Play(); //plays the particlce affect when the player collides with the food
             if (_eatenFood==5)
             {
                 

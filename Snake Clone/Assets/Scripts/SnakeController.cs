@@ -8,6 +8,7 @@ public class SnakeController : MonoBehaviour
     private List<Transform> _segments;
     public Transform _segmentPrefab;
     public TestingFood _NumEatenfood;
+    [SerializeField] private ParticleSystem _feedback;
     private void Start()
     {
         _segments = new List<Transform>();
@@ -84,6 +85,7 @@ public class SnakeController : MonoBehaviour
         else if (other.tag=="extrafood")
         {
             Grow(); //suppised to replace this function with one that grows twice the sections on the snake
+            _feedback.Play(); //plays the particlce affect when the player collides with the food
         }
 
     }
