@@ -5,34 +5,49 @@ using UnityEngine;
 public class SnakeController : MonoBehaviour
 {
     private Vector2 _direction = Vector2.right;
-    private List<Transform> _segments;
+    private List<Transform> _segments = new List<Transform>();
     public Transform _segmentPrefab;
     public TestingFood _NumEatenfood;
     [SerializeField] private ParticleSystem _feedback;
+    public int _initialSize = 4;
     private void Start()
     {
-        _segments = new List<Transform>();
-        _segments.Add(this.transform); 
-        
+      Resetstate(); 
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            _direction = Vector2.up;
+            if (_direction!= Vector2.down) //makes sure that the player doesnt collide with self
+            {
+                _direction = Vector2.up;
+            }
+           
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            _direction = Vector2.down;
+            if (_direction!= Vector2.up)
+            {
+                _direction = Vector2.down;
+            }
+          
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            _direction = Vector2.left;
+            if (_direction != Vector2.right)
+            {
+                _direction = Vector2.left;
+            }
+           
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            _direction = Vector2.right;
+            if (_direction != Vector2.left)
+            {
+                _direction = Vector2.right;
+            }
+           
         }
     }
 
@@ -69,6 +84,10 @@ public class SnakeController : MonoBehaviour
 
         this.transform.position = Vector3.zero;
 
+        for (int i  = 1; i  < this._initialSize; i ++)
+        {
+            _segments.Add(Instantiate(this._segmentPrefab));
+        }
         //add a reference to food script to reset the amount of food eaten to zero
         _NumEatenfood._eatenFood = 0; //resets the amount of food eaten
     }
