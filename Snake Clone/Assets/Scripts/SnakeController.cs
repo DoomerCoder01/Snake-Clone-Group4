@@ -17,7 +17,7 @@ public class SnakeController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow)|| Input.GetKeyDown(KeyCode.W))
         {
             if (_direction!= Vector2.down) //makes sure that the player doesnt collide with self
             {
@@ -25,7 +25,7 @@ public class SnakeController : MonoBehaviour
             }
            
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetKeyDown(KeyCode.S))
         {
             if (_direction!= Vector2.up)
             {
@@ -33,7 +33,7 @@ public class SnakeController : MonoBehaviour
             }
           
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             if (_direction != Vector2.right)
             {
@@ -41,7 +41,7 @@ public class SnakeController : MonoBehaviour
             }
            
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetKeyDown(KeyCode.D))
         {
             if (_direction != Vector2.left)
             {
