@@ -45,7 +45,7 @@ public class Gamerestart : MonoBehaviour
             {
                 bodyObject.GetComponent<SpriteRenderer>().color = (i % 2 == 0) ? flashColor1 : flashColor2;
             }
-            yield return new WaitForSecondsRealtime(0.5f);
+            yield return new WaitForSecondsRealtime(0.9f);
         }
         ///Time.timeScale = 1;
         restartMenu.SetActive(true);

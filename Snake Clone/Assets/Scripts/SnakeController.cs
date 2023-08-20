@@ -105,7 +105,12 @@ public class SnakeController : MonoBehaviour
         {
             Grow(); //suppised to replace this function with one that grows twice the sections on the snake
             _feedback.Play(); //plays the particlce affect when the player collides with the food
+            Grow(); //call on it twice so that the snake grows twice when colliding with special food
         }
+        else if (other.tag=="Body")
+        {
+            //add restart here
 
+        }
     }
 }
