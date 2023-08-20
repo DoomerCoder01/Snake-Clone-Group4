@@ -99,7 +99,7 @@ public class SnakeController : MonoBehaviour
         }
         else if (other.tag== "Obstacle")
         {
-            Resetstate();
+            ///Resetstate();
         }
         else if (other.tag=="extrafood")
         {
