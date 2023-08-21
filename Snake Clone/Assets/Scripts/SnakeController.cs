@@ -10,9 +10,12 @@ public class SnakeController : MonoBehaviour
     public TestingFood _NumEatenfood;
     [SerializeField] private ParticleSystem _feedback;
     public int _initialSize = 4;
+    public ScreenBounds screenBunds;
+    Vector3 tempPos;
+    
     private void Start()
     {
-      Resetstate(); 
+        Resetstate();
     }
 
     private void Update()
@@ -49,20 +52,32 @@ public class SnakeController : MonoBehaviour
             }
            
         }
+
     }
 
     private void FixedUpdate()
     {
+        tempPos = new Vector3(
+          Mathf.Round(this.transform.localPosition.x + _direction.x), //round the values to whole numbers helps give the game feel like its on a grid
+          Mathf.Round(this.transform.localPosition.y + _direction.y),
+          0.0f
+           );
+
         for (int i = _segments.Count -1; i >0 ; i--) //allows us to instantiate objects and move them in reverse order
         {
             _segments[i].position = _segments[i - 1].position;
         }
 
-        this.transform.position = new Vector3(
-           Mathf.Round(this.transform.position.x + _direction.x), //round the values to whole numbers helps give the game feel like its on a grid
-           Mathf.Round(this.transform.position.y + _direction.y),
-           0.0f
-            );
+        if (screenBunds.OutOfBounds(tempPos))
+        {
+            Vector2 newPosition = screenBunds.CalculateWrappedPos(tempPos);
+            
+            transform.position = newPosition;
+        }
+        else
+        {
+            transform.position = tempPos;
+        }
     }
     
     private void Grow()
