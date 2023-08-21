@@ -86,6 +86,7 @@ public class SnakeController : MonoBehaviour
         segment.position = _segments[_segments.Count - 1].position;
 
         _segments.Add(segment);
+
     }
     private void Resetstate()
     {
@@ -114,18 +115,20 @@ public class SnakeController : MonoBehaviour
         }
         else if (other.tag== "Obstacle")
         {
-            ///Resetstate();
+            ///
         }
         else if (other.tag=="extrafood")
         {
             Grow(); //suppised to replace this function with one that grows twice the sections on the snake
             _feedback.Play(); //plays the particlce affect when the player collides with the food
             Grow(); //call on it twice so that the snake grows twice when colliding with special food
+
+            _NumEatenfood._eatenFood = 0;
         }
         else if (other.tag=="Body")
         {
             //add restart here
-
+            ///Resetstate();
         }
     }
 }
