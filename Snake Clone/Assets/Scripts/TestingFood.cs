@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TestingFood : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class TestingFood : MonoBehaviour
     public  GameObject _extrafood;
     public int _eatenFood; //counts the amount of times the player has eaten the food
     [SerializeField] private ParticleSystem _foodfeedback;
-
+    public Text countdownText;
     private void Start()
     {
         RandomisePosition();
@@ -40,8 +41,8 @@ public class TestingFood : MonoBehaviour
 
         Instantiate(_extrafood, _extrafood.transform.position,Quaternion.identity);
 
-       
-       
+        countdownText.gameObject.SetActive(true);
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
