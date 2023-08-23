@@ -28,7 +28,7 @@ public class TestingFood : MonoBehaviour
         this.transform.position= new Vector3(Mathf.Round(x),Mathf.Round(y),0); //need to round off vectors so that the food appears in a grid
 
     }
-    private void RandomiseExtrafoodPosition()
+    public void RandomiseExtrafoodPosition()
     {
         ///_extrafood.gameObject.SetActive(true); //first turn on the extra food 
 
@@ -59,9 +59,18 @@ public class TestingFood : MonoBehaviour
                 _eatenFood = 0; //if the amount of food eaten is more then or equal to five reset the amount of food
             }
         }
-
+        if (other.tag== "Body")
+        {
+            RandomisePosition(); 
+        }
     }
-
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag=="Body")
+        {
+            RandomisePosition();
+        }
+    }
    
 
 }

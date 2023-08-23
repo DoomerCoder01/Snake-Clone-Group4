@@ -9,7 +9,7 @@ public class extrafood : MonoBehaviour
     [SerializeField] private ParticleSystem _feedback;
     public Text countdownText;
     private float timeLeft = 5.0f;
-
+    public TestingFood randomizextrafood;
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -22,10 +22,23 @@ public class extrafood : MonoBehaviour
 
             Destroy(gameObject);
         }
+        if (other.tag=="Body")
+        {
+            randomizextrafood.RandomiseExtrafoodPosition(); //if object collides with snake body it should reposition it self
+        }
 
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag=="Body")
+        {
+            randomizextrafood.RandomiseExtrafoodPosition();
+        }
     }
     private void Update()
     {
+        randomizextrafood= GameObject.FindGameObjectWithTag("Food").GetComponent<TestingFood>();
+
         countdownText = GameObject.FindGameObjectWithTag("Countdown").GetComponent<Text>();
         if (gameObject.activeSelf)
         {
