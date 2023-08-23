@@ -32,7 +32,7 @@ public class extrafood : MonoBehaviour
     {
         if (other.tag=="Body")
         {
-            randomizextrafood.RandomiseExtrafoodPosition();
+           /// randomizextrafood.RandomiseExtrafoodPosition();
         }
     }
     private void Update()

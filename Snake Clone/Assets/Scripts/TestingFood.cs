@@ -68,7 +68,7 @@ public class TestingFood : MonoBehaviour
     {
         if (other.tag=="Body")
         {
-            RandomisePosition();
+            ///RandomisePosition();
         }
     }
    

@@ -13,7 +13,7 @@ public class SnakeController : MonoBehaviour
     public ScreenBounds screenBunds;
     Vector3 tempPos;
     private bool InputActive = true;
-    public float reactiveatetime = 0.1f;
+    public float reactiveatetime = 0.09f;
     private void Start()
     {
         Resetstate();
