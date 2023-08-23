@@ -29,5 +29,9 @@ public class score : MonoBehaviour
         {
             number = number + 10;
         }
+        if (collision.gameObject.CompareTag("speedfood"))
+        {
+            number = number + 15;
+        }
     }
 }
