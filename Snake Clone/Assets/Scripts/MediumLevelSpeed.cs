@@ -1,18 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MediumLevelSpeed : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float speed = 0.075f;
+
+    public Text countdownText;
+    private float timeLeft = 10.0f;
+
     void Start()
     {
-        Time.fixedDeltaTime = 0.075f;
+        Time.fixedDeltaTime = speed;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Time.fixedDeltaTime != speed)
+        {
+            countdownText.gameObject.SetActive(true);
+            timeLeft -= Time.deltaTime;
+            countdownText.text = Mathf.Round(timeLeft).ToString();
+        }
+
+        if (timeLeft <= 0)
+        {
+            countdownText.gameObject.SetActive(false);
+            Time.fixedDeltaTime = speed;
+        }
     }
 }
