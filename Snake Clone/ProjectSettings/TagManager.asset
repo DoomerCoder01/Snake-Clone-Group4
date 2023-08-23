@@ -9,6 +9,7 @@ TagManager:
   - extrafood
   - Body
   - Countdown
+  - speedfood
   layers:
   - Default
   - TransparentFX
