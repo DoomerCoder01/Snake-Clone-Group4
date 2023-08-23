@@ -887,7 +887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 2238899076506638408, guid: f5dd6561a01bf984199e5eab9ba4cc97, type: 3}
-  spawnDistance: 40
+  spawnDistance: 15
   spawnRate: 5
   amountPerSpawn: 1
   trajectoryVariance: 10
