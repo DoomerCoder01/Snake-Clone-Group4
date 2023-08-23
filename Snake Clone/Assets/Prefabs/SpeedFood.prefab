@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeedFood
       objectReference: {fileID: 0}
+    - target: {fileID: 1380492548198167820, guid: 87de32944f3dc8a46b815f111e1d2513, type: 3}
+      propertyPath: m_TagString
+      value: speedfood
+      objectReference: {fileID: 0}
     - target: {fileID: 1790847323194461348, guid: 87de32944f3dc8a46b815f111e1d2513, type: 3}
       propertyPath: m_Color.b
       value: 1
