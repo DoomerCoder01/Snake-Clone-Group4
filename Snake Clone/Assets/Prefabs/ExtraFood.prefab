@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4054069721972581546}
   - component: {fileID: 1790847323194461348}
-  - component: {fileID: 6564584793509345569}
   - component: {fileID: -483545565665775025}
+  - component: {fileID: 1358946707527626827}
   - component: {fileID: 4455502426081483530}
   m_Layer: 0
   m_Name: ExtraFood
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.8756386, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.16084719, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -88,22 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6564584793509345569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380492548198167820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aa0eeb696155674d8596927064b36e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 5
-  _feedback: {fileID: 4161056497259985362}
-  countdownText: {fileID: 0}
-  randomizextrafood: {fileID: 0}
 --- !u!61 &-483545565665775025
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,6 +133,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1358946707527626827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380492548198167820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e59515e858ecea438e4f0db3cf884df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 5
+  _feedback: {fileID: 4161056497259985362}
+  countdownText: {fileID: 0}
 --- !u!50 &4455502426081483530
 Rigidbody2D:
   serializedVersion: 4
