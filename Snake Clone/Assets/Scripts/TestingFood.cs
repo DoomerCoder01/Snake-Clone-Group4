@@ -11,6 +11,7 @@ public class TestingFood : MonoBehaviour
     public int _eatenFood; //counts the amount of times the player has eaten the food
     [SerializeField] private ParticleSystem _foodfeedback;
     public Text countdownText;
+    public AudioSource au;
     private void Start()
     {
         RandomisePosition();
@@ -51,6 +52,7 @@ public class TestingFood : MonoBehaviour
             RandomisePosition();
             _eatenFood++; //adds a single unit each time player collides with the food
             _foodfeedback.Play(); //plays the particlce affect when the player collides with the food
+            au.Play();
             if (_eatenFood==5)
             {
                 

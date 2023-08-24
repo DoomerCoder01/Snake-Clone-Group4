@@ -10,6 +10,8 @@ public class speedfood : MonoBehaviour
     public Text countdownText;
     private float timeLeft = 5.0f;
 
+    public AudioSource au;
+
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -18,6 +20,8 @@ public class speedfood : MonoBehaviour
             _feedback.Play(); //plays the particlce affect when the player collides with the food
 
             countdownText.gameObject.SetActive(false);
+            au = other.GetComponent<AudioSource>();
+            au.Play();
             Time.fixedDeltaTime = 0.03f;
 
             Destroy(gameObject);
