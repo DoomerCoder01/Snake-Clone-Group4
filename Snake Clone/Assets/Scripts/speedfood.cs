@@ -9,7 +9,7 @@ public class speedfood : MonoBehaviour
     [SerializeField] private ParticleSystem _feedback;
     public Text countdownText;
     private float timeLeft = 5.0f;
-
+    public float speedincrease = 0.05f;
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,8 +17,8 @@ public class speedfood : MonoBehaviour
         {
             _feedback.Play(); //plays the particlce affect when the player collides with the food
 
-            countdownText.gameObject.SetActive(false);
-            Time.fixedDeltaTime = 0.03f;
+            countdownText.text="";
+            Time.fixedDeltaTime = speedincrease; //
 
             Destroy(gameObject);
         }
@@ -42,7 +42,7 @@ public class speedfood : MonoBehaviour
 
         yield return new WaitForSeconds(delay);
 
-        countdownText.gameObject.SetActive(false);
+        countdownText.text="";
         Destroy(gameObject);
 
     }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class score : MonoBehaviour
 {
     public Text Score;
-
+    public Text Hightscore;
     public int number = 0;
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,7 @@ public class score : MonoBehaviour
     void Update()
     {
         Score.text = number.ToString();
+        Hightscore.text = number.ToString();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

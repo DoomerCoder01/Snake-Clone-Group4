@@ -14,9 +14,11 @@ public class SnakeController : MonoBehaviour
     Vector3 tempPos;
     private bool InputActive = true;
     public float reactiveatetime = 0.09f;
+    [SerializeField] private ParticleSystem _speedfeedback;
     private void Start()
     {
         Resetstate();
+       
     }
 
     private void Update()
@@ -153,6 +155,11 @@ public class SnakeController : MonoBehaviour
         {
             //add restart here
             ///Resetstate();
+        }
+        else if (other.tag=="speedfood")
+        {
+            _speedfeedback.Play();
+            Grow();
         }
     }
 }

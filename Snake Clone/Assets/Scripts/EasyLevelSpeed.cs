@@ -8,7 +8,7 @@ public class EasyLevelSpeed : MonoBehaviour
     public float speed = 0.099999f;
 
     public Text countdownText;
-    private float timeLeft = 10.0f;
+    private float timeLeft = 5f;
 
     void Start()
     {
@@ -26,7 +26,7 @@ public class EasyLevelSpeed : MonoBehaviour
 
         if (timeLeft <= 0)
         {
-            countdownText.gameObject.SetActive(false);
+            countdownText.text="";
             Time.fixedDeltaTime = speed;
         }
     }

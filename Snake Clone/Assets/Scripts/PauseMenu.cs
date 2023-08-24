@@ -11,11 +11,12 @@ public class PauseMenu : MonoBehaviour
     public static bool GamePaused = false;
 
     public GameObject pauseMenuUI;
-
+    public Gamerestart gamerestart; 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        gamerestart = GameObject.FindGameObjectWithTag("Player").GetComponent<Gamerestart>();
+        if (Input.GetKeyDown(KeyCode.Escape)&& !gamerestart.Gameover)
         {
             if (GamePaused)
             {
@@ -37,6 +38,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
+
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GamePaused = true;
@@ -50,6 +52,21 @@ public class PauseMenu : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+    public void Hardlevel()
+    {
+       SceneManager.LoadScene("Snake Hard Level");
+        Time.timeScale = 1f;
+    }
+    public void MediumLevel()
+    {
+        SceneManager.LoadScene("Snake Medium  Level");
+        Time.timeScale = 1f;
+    }
+    public void EasyLevel()
+    {
+        SceneManager.LoadScene("Snake");
+        Time.timeScale = 1f;
     }
 
     public void Restart()

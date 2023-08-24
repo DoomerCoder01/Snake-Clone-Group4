@@ -10,7 +10,7 @@ public class Gamerestart : MonoBehaviour
     public Color flashColor2;
     private SpriteRenderer spriteRenderer;
     public GameObject[] bodyObjects;
-
+    public bool Gameover= false;
     void Start()
     {
         bodyObjects = GameObject.FindGameObjectsWithTag("Body");
@@ -28,10 +28,12 @@ public class Gamerestart : MonoBehaviour
         if (other.gameObject.CompareTag("Obstacle"))
         {
             StartCoroutine(Flash());
+            Gameover = true;
         }
         else if (other.tag=="Body")
         {
             StartCoroutine(Flash());
+            Gameover=true;
         }  
     }
 
@@ -48,6 +50,7 @@ public class Gamerestart : MonoBehaviour
             yield return new WaitForSecondsRealtime(0.9f);
         }
         ///Time.timeScale = 1;
+        Gameover = true;
         restartMenu.SetActive(true);
     }
 }

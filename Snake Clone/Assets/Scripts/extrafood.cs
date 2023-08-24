@@ -10,6 +10,7 @@ public class extrafood : MonoBehaviour
     public Text countdownText;
     private float timeLeft = 5.0f;
     public TestingFood randomizextrafood;
+    public TestingFood Countextrafood;
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,10 +18,15 @@ public class extrafood : MonoBehaviour
         {
             _feedback.Play(); //plays the particlce affect when the player collides with the food
 
-            countdownText.gameObject.SetActive(false);
-
-
+            countdownText.text="";
+            Countextrafood.isInstantiated = false;
+            Countextrafood.countextrafood++;
             Destroy(gameObject);
+            GameObject[] objectswithtag = GameObject.FindGameObjectsWithTag("extrafood");
+            foreach (GameObject obj in objectswithtag)
+            {
+                Destroy(obj);
+            }
         }
         if (other.tag=="Body")
         {
@@ -47,6 +53,10 @@ public class extrafood : MonoBehaviour
         timeLeft -= Time.deltaTime;
         countdownText.text = Mathf.Round(timeLeft).ToString();
 
+        Countextrafood = GameObject.FindGameObjectWithTag("Food").GetComponent<TestingFood>();
+        Countextrafood.isInstantiated=true;
+
+        GameObject[] objectswithtag = GameObject.FindGameObjectsWithTag("extrafood");
     }
 
 
@@ -54,8 +64,16 @@ public class extrafood : MonoBehaviour
     {
 
         yield return new WaitForSeconds(delay);
-        
-        countdownText.gameObject.SetActive(false);
+        Countextrafood.isInstantiated = false;
+        countdownText.text="";
+        GameObject[] objectswithtag = GameObject.FindGameObjectsWithTag("extrafood");
+        foreach (GameObject obj in objectswithtag)
+        {
+            Destroy(obj);
+        }
+
+
+
         Destroy(gameObject);
 
     }

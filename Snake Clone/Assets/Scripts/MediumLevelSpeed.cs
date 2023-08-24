@@ -26,7 +26,7 @@ public class MediumLevelSpeed : MonoBehaviour
 
         if (timeLeft <= 0)
         {
-            countdownText.gameObject.SetActive(false);
+            countdownText.text="";
             Time.fixedDeltaTime = speed;
         }
     }
