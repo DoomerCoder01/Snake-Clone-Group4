@@ -235,7 +235,7 @@ MonoBehaviour:
   ExitTriggerFired:
     m_PersistentCalls:
       m_Calls: []
-  teleportOffset: 0.2
+  teleportOffset: 0
   cornerOffset: 1
 --- !u!61 &137264853
 BoxCollider2D:
@@ -874,7 +874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &961158803
 MonoBehaviour:
   m_ObjectHideFlags: 0
