@@ -12,11 +12,13 @@ public class ScreenBounds : MonoBehaviour
 
     public UnityEvent<Collider2D> ExitTriggerFired;
 
-    [SerializeField] private float teleportOffset = 0.2f;
-    [SerializeField] private float cornerOffset = 1;
+    [SerializeField] private float teleportOffset = 0f;
+    [SerializeField] private float cornerOffset = 2f;
 
     private void Awake()
     {
+        teleportOffset = 2f;
+        cornerOffset = 1f;
         this.mainCam.transform.localScale = Vector3.one;
         boxColl = GetComponent<BoxCollider2D>();
         boxColl.isTrigger = true;
@@ -31,7 +33,7 @@ public class ScreenBounds : MonoBehaviour
 
     public void UpdateBoundSize()
     {
-        float ySize = mainCam.orthographicSize * 2;
+        float ySize = mainCam.orthographicSize * 2 - 0.2f;
         Vector2 boxColliderSize = new Vector2(ySize * mainCam.aspect, ySize);
         boxColl.size = boxColliderSize;
     }

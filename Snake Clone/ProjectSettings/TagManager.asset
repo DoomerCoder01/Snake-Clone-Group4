@@ -9,11 +9,12 @@ TagManager:
   - extrafood
   - Body
   - Countdown
+  - speedfood
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Body
   - Water
   - UI
   - 
@@ -45,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Body
+    uniqueID: 2867553793
     locked: 0

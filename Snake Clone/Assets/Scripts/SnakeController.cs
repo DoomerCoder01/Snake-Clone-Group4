@@ -12,49 +12,74 @@ public class SnakeController : MonoBehaviour
     public int _initialSize = 4;
     public ScreenBounds screenBunds;
     Vector3 tempPos;
-    
+    private bool InputActive = true;
+    public float reactiveatetime = 0.09f;
+    [SerializeField] private ParticleSystem _speedfeedback;
     private void Start()
     {
         Resetstate();
+       
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow)|| Input.GetKeyDown(KeyCode.W))
+        if (InputActive)
         {
-            if (_direction!= Vector2.down) //makes sure that the player doesnt collide with self
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
-                _direction = Vector2.up;
+                if (_direction != Vector2.down) //makes sure that the player doesnt collide with self
+                {
+                    _direction = Vector2.up;
+
+                    InputActive = false;
+                    Invoke("ResetInputActive", reactiveatetime);
+                }
+
             }
-           
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetKeyDown(KeyCode.S))
-        {
-            if (_direction!= Vector2.up)
+            else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
-                _direction = Vector2.down;
+                if (_direction != Vector2.up)
+                {
+                    _direction = Vector2.down;
+
+
+                    InputActive = false;
+                    Invoke("ResetInputActive", reactiveatetime);
+                }
+
             }
-          
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
-        {
-            if (_direction != Vector2.right)
+            else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             {
-                _direction = Vector2.left;
+                if (_direction != Vector2.right)
+                {
+                    _direction = Vector2.left;
+
+
+                    InputActive = false;
+                    Invoke("ResetInputActive", reactiveatetime);
+                }
+
             }
-           
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetKeyDown(KeyCode.D))
-        {
-            if (_direction != Vector2.left)
+            else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
             {
-                _direction = Vector2.right;
+                if (_direction != Vector2.left)
+                {
+                    _direction = Vector2.right;
+
+
+                    InputActive = false;
+                    Invoke("ResetInputActive", reactiveatetime);
+                }
+
             }
-           
         }
+        
 
     }
-
+    private void ResetInputActive()
+    {
+        InputActive = true;
+    }
     private void FixedUpdate()
     {
         tempPos = new Vector3(
@@ -122,13 +147,19 @@ public class SnakeController : MonoBehaviour
             Grow(); //suppised to replace this function with one that grows twice the sections on the snake
             _feedback.Play(); //plays the particlce affect when the player collides with the food
             Grow(); //call on it twice so that the snake grows twice when colliding with special food
-
+            Grow();
+            Grow();
             _NumEatenfood._eatenFood = 0;
         }
         else if (other.tag=="Body")
         {
             //add restart here
             ///Resetstate();
+        }
+        else if (other.tag=="speedfood")
+        {
+            _speedfeedback.Play();
+            Grow();
         }
     }
 }
