@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 9cb02ad8cce524a45b12533b62be545d
+  - enabled: 1
+    path: Assets/Scenes/Lvl Selection.unity
+    guid: c7c1adfdecff0e74faef90fc152ff6ef
+  - enabled: 1
     path: Assets/Scenes/Snake.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -14,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Snake Hard Level.unity
     guid: 807ff0f0ddea4fc468763d27fd71f6fb
+  - enabled: 1
+    path: Assets/Scenes/HowToPlay.unity
+    guid: c0a26905f928cd447b8b022d67120a79
   m_configObjects: {}

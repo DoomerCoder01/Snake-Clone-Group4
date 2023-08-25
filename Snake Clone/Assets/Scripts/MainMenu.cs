@@ -22,4 +22,20 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("HowToPlay");
     }
+
+     public void Hardlevel()
+    {
+       SceneManager.LoadScene("Snake Hard Level");
+        Time.timeScale = 1f;
+    }
+    public void MediumLevel()
+    {
+        SceneManager.LoadScene("Snake Medium  Level");
+        Time.timeScale = 1f;
+    }
+    public void EasyLevel()
+    {
+        SceneManager.LoadScene("Snake");
+        Time.timeScale = 1f;
+    }
 }
