@@ -23,3 +23,4 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("HowToPlay");
     }
 }
+
