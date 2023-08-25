@@ -11,13 +11,15 @@ public class extrafood : MonoBehaviour
     private float timeLeft = 5.0f;
     public TestingFood randomizextrafood;
     public TestingFood Countextrafood;
+    public AudioSource Au;
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             _feedback.Play(); //plays the particlce affect when the player collides with the food
-
+            Au = other.GetComponent<AudioSource>();
+            Au.Play();
             countdownText.text="";
             Countextrafood.isInstantiated = false;
             Countextrafood.countextrafood++;
@@ -32,7 +34,10 @@ public class extrafood : MonoBehaviour
         {
             randomizextrafood.RandomiseExtrafoodPosition(); //if object collides with snake body it should reposition it self
         }
-
+        if (other.tag=="Obstacle")
+        {
+            randomizextrafood.RandomiseExtrafoodPosition();
+        }
     }
     private void OnTriggerStay2D(Collider2D other)
     {

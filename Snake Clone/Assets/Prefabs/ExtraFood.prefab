@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -483545565665775025}
   - component: {fileID: 4455502426081483530}
   - component: {fileID: 6066767669012413552}
+  - component: {fileID: 6445129009412907521}
   m_Layer: 0
   m_Name: ExtraFood
   m_TagString: extrafood
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1380492548198167820}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: -1, z: 0}
+  m_LocalPosition: {x: -0, y: 7, z: 0}
   m_LocalScale: {x: 2.1402, y: 2.1402, z: 2.1402}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -177,6 +178,20 @@ MonoBehaviour:
   countdownText: {fileID: 0}
   randomizextrafood: {fileID: 0}
   Countextrafood: {fileID: 0}
+  Au: {fileID: 0}
+--- !u!114 &6445129009412907521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380492548198167820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8503edb663f5ea14fb9c06904f5e048c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToCheck: {fileID: 1380492548198167820}
 --- !u!1 &1503718491894378523
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,8 @@ public class SnakeController : MonoBehaviour
     private bool InputActive = true;
     public float reactiveatetime = 0.09f;
     [SerializeField] private ParticleSystem _speedfeedback;
+    [SerializeField] private ParticleSystem _normalfoodfeedback;
+    
     private void Start()
     {
         Resetstate();
@@ -137,6 +139,7 @@ public class SnakeController : MonoBehaviour
         if (other.tag == "Food")
         {
             Grow();
+            _normalfoodfeedback.Play();
         }
         else if (other.tag== "Obstacle")
         {
@@ -150,6 +153,7 @@ public class SnakeController : MonoBehaviour
             Grow();
             Grow();
             _NumEatenfood._eatenFood = 0;
+            
         }
         else if (other.tag=="Body")
         {
@@ -160,6 +164,7 @@ public class SnakeController : MonoBehaviour
         {
             _speedfeedback.Play();
             Grow();
+            
         }
     }
 }

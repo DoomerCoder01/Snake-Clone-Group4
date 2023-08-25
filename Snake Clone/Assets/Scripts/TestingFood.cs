@@ -14,6 +14,7 @@ public class TestingFood : MonoBehaviour
     public int countextrafood;
     public GameObject Speedfood;
     public bool isInstantiated=false;
+    public AudioSource Au; 
     private void Start()
     {
         RandomisePosition();
@@ -69,7 +70,9 @@ public class TestingFood : MonoBehaviour
         {
             RandomisePosition();
             _eatenFood++; //adds a single unit each time player collides with the food
-            _foodfeedback.Play(); //plays the particlce affect when the player collides with the food
+            ///_foodfeedback.Play(); //plays the particlce affect when the player collides with the food
+            Au = other.GetComponent<AudioSource>();
+            Au.Play();
             if (_eatenFood==5)
             {
                 
@@ -83,7 +86,10 @@ public class TestingFood : MonoBehaviour
         {
             RandomisePosition(); 
         }
-
+        if (other.tag=="Obstacle")
+        {
+            RandomisePosition();
+        }
     }
     private void OnTriggerStay2D(Collider2D other)
     {
