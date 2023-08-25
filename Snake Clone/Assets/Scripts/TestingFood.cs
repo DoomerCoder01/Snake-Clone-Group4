@@ -70,7 +70,7 @@ public class TestingFood : MonoBehaviour
         {
             RandomisePosition();
             _eatenFood++; //adds a single unit each time player collides with the food
-            ///_foodfeedback.Play(); //plays the particlce affect when the player collides with the food
+            _foodfeedback.Play(); //plays the particlce affect when the player collides with the food
             Au = other.GetComponent<AudioSource>();
             Au.Play();
             if (_eatenFood==5)

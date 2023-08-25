@@ -781,6 +781,10 @@ PrefabInstance:
       propertyPath: _NumEatenfood
       value: 
       objectReference: {fileID: 1083783573}
+    - target: {fileID: 4966266857928891903, guid: 1de0b6baaab4d424fabfdf7fdb6b031d, type: 3}
+      propertyPath: _normalfoodfeedback
+      value: 
+      objectReference: {fileID: 890032950}
     - target: {fileID: 5116277653936760147, guid: 1de0b6baaab4d424fabfdf7fdb6b031d, type: 3}
       propertyPath: m_Name
       value: Snake

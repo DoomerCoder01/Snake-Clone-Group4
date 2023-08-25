@@ -4916,7 +4916,7 @@ Transform:
   m_GameObject: {fileID: 7930392646886226694}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 7, z: 0}
+  m_LocalPosition: {x: -9, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5064,6 +5064,7 @@ MonoBehaviour:
   countdownText: {fileID: 0}
   speedincrease: 0.05
   Au: {fileID: 0}
+  randomizextrafood: {fileID: 0}
 --- !u!114 &1089793288748076071
 MonoBehaviour:
   m_ObjectHideFlags: 0
